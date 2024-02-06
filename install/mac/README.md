@@ -102,7 +102,7 @@ Execute in the terminal to add self-signed certificate. This step is crucial for
 When prompted for a password, enter your Mac login password to complete the installation of the new certificate. (Can happen two times)
 ```sh
 mkdir -p ~/.litium-config &&
-curl -L https://github.com/robertbadas-columbus/litium/tree/main/install/mac/localhost.config -o ~/.litium-config/localhost.config &&
+curl -L https://raw.githubusercontent.com/robertbadas-columbus/litium/main/install/mac/localhost.config -o ~/.litium-config/localhost.config &&
 cd ~/.litium-config
 _pass=$(openssl rand -hex 8)
 openssl req -x509 -nodes -days 3650 -newkey rsa:4096 -keyout localhost.key -out localhost.crt -config localhost.config -subj "/CN=localhost" &&
@@ -209,7 +209,7 @@ RUNTIME_LITIUM_SERVER_URL=https://localhost:5001
 NODE_TLS_REJECT_UNAUTHORIZED="0"
 ' >"$headless_dir/.env.local"
 
-curl -L https://github.com/robertbadas-columbus/litium/tree/main/install/mac/docker-compose.yml -o $docker_dir/docker-compose.yml &&
+curl -L https://raw.githubusercontent.com/robertbadas-columbus/litium/main/install/mac/docker-compose.yml -o $docker_dir/docker-compose.yml &&
 nvm use "18.17.0" && 
 cd $backend_dir/Src/Litium.Accelerator.Mvc && yarn install
 cd $backend_dir/Src/Litium.Accelerator.Email && yarn install
