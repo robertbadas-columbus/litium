@@ -271,7 +271,7 @@ There are two urls you can visit. The Headless React and MVC Accelerator page.
 | https://localhost:3001 | https://localhost:5001 |
 | <img src="readme_litium_headless.png" alt="" style="max-width: 350px;">   | <img src="readme_litium_mvc.png" alt="" style="max-width: 350px;">  |
 
-## To relaunch the application
+## Relaunch the application
 Execute in the terminal:
 ```sh
 $HOME/Desktop/LitiumTutorial/docker/docker-compose up -d &
