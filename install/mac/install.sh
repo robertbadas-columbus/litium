@@ -96,7 +96,8 @@ check_node_version $node_version
 
 # Check if project folder exists
 if [ -d "$desktop_path/$project_name" ]; then
-    err "Folder already exists. Aborting."
+    err "Error: Folder already exists. Aborting."
+    err "$desktop_path/$project_name"
     exit 1
 fi
 
