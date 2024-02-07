@@ -29,7 +29,7 @@ Password: nimda
 ![GIF](media/readme_litium_create_website.gif)
 
 ### Import Translations/Texts
-- Go to link https://localhost:5001/Litium/UI/settings/websites/website?bc=website:website
+- Go to link <a target="_blank" href="https://localhost:5001/Litium/UI/settings/websites/website?bc=website:website">https://localhost:5001/Litium/UI/settings/websites/website?bc=website:website</a>
 - Double click on the row `localhost`
 - Click the tab `Texts`
 - Click the button `Import` and then `Select file`
@@ -44,7 +44,7 @@ There are two urls you can visit. The Headless React and MVC Accelerator page.
 
 |     Headless React     |    MVC - Accelerator   |
 | ---------------------- | ---------------------- |
-| https://localhost:3001 | https://localhost:5001 |
+| <a target="_blank" href="https://localhost:3001">https://localhost:3001</a> | <a target="_blank" href="https://localhost:5001">https://localhost:5001</a> |
 | <img src="media/readme_litium_headless.png" alt="" width="450">   | <img src="media/readme_litium_mvc.png" alt="" width="450">  |
 
 ## Relaunch the application
