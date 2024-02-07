@@ -152,7 +152,7 @@ There are two urls you can visit. The Headless React and MVC Accelerator page.
 ## Relaunch the application
 Execute in the terminal.
 ```sh
-$HOME/Desktop/LitiumTutorial/docker/docker-compose up -d &
+cd $HOME/Desktop/LitiumTutorial/docker && docker-compose up -d &
 cd $HOME/Desktop/LitiumTutorial/backend/Src/Litium.Accelerator.Mvc &&
 dotnet run
 ```
