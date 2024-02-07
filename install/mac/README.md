@@ -14,7 +14,7 @@ This repository provides step-by-step instructions for installing Litium 8 on a 
 
 
 ## Create new litium MVC-Accelerator & Headless React project
-Paste the code in terminal to create and install the project. 🪄
+Paste the code in terminal to create a new project. 🪄
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/robertbadas-columbus/litium/main/install/mac/install.sh)"
 ```
