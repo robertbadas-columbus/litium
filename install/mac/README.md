@@ -147,7 +147,7 @@ There are two urls you can visit. The Headless React and MVC Accelerator page.
 |     Headless React     |    MVC - Accelerator   |
 | ---------------------- | ---------------------- |
 | https://localhost:3001 | https://localhost:5001 |
-| <img src="media/readme_litium_headless.png" alt="" style="max-width: 350px;">   | <img src="media/readme_litium_mvc.png" alt="" style="max-width: 350px;">  |
+| <img src="media/readme_litium_headless.png" alt="" width="450">   | <img src="media/readme_litium_mvc.png" alt="" width="450">  |
 
 ## Relaunch the application
 Execute in the terminal.
@@ -175,6 +175,6 @@ Columbus is a global digital advisory and IT services company with more than 1,6
 Columbus’ offers end-to-end digital solutions within Strategy & Change, Cloud ERP, Digital Commerce, Data & Analytics, Customer Experience and Application Management that address the lifecycle and sustainability demands of the Manufacturing, Retail & Distribution, Food & Process industries.
 
 We offer a comprehensive solution portfolio with deep industry knowledge, extensive technology expertise and profound customer insight. We have proven this through 30 years of experience serving more than 2,500 customers worldwide.<br>
-<a href="https://columbusglobal.com">www.columbusglobal.com</a><br>
+[www.columbusglobal.com](https://www.columbusglobal.com)
 
-<a href="https://www.columbusglobal.com"><img src="media/columbus.png" alt="" style="max-width: 250px;"></a>
+<a href="https://www.columbusglobal.com"><img src="media/columbus.png" alt="" width="250px"></a>
