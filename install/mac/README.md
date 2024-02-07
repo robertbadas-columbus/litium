@@ -29,7 +29,7 @@ Password: nimda
 ![GIF](media/readme_litium_create_website.gif)
 
 ### Import Translations/Texts
-- Go to link [https://localhost:5001/Litium/UI/settings/websites/website?bc=website:website](https://localhost:5001/Litium/UI/settings/websites/website?bc=website:website){:target="_blank"}
+- Go to link <a target="_blank" href="https://localhost:5001/Litium/UI/settings/websites/website?bc=website:website">https://localhost:5001/Litium/UI/settings/websites/website?bc=website:website</a>
 - Double click on the row `localhost`
 - Click the tab `Texts`
 - Click the button `Import` and then `Select file`
@@ -73,6 +73,6 @@ Columbus is a global digital advisory and IT services company with more than 1,6
 Columbus’ offers end-to-end digital solutions within Strategy & Change, Cloud ERP, Digital Commerce, Data & Analytics, Customer Experience and Application Management that address the lifecycle and sustainability demands of the Manufacturing, Retail & Distribution, Food & Process industries.
 
 We offer a comprehensive solution portfolio with deep industry knowledge, extensive technology expertise and profound customer insight. We have proven this through 30 years of experience serving more than 2,500 customers worldwide.<br>
-[www.columbusglobal.com](https://www.columbusglobal.com){:target="_blank"}
+[www.columbusglobal.com](https://www.columbusglobal.com)
 
 <a href="https://www.columbusglobal.com"><img src="media/columbus.png" alt="" width="250px"></a>
