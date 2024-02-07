@@ -116,7 +116,7 @@ echo -e "\033[1;33mPassword used for certificate: $_pass\033[0m"
 
 
 ## Create new litium MVC-Accelerator & Headless React project
-Paste the code in terminal to create and install the project.
+Paste the code in terminal to create and install the project. 🪄
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/robertbadas-columbus/litium/main/install/mac/install.sh)"
 ```
@@ -128,7 +128,7 @@ URL: <a target="_blank" href="https://localhost:5001/Litium/UI/settings/extensio
 Username: admin
 Password: nimda
 </pre>
-![GIF](readme_litium_create_website.gif)
+![GIF](media/readme_litium_create_website.gif)
 
 ### Import Translations/Texts
 - Go to link https://localhost:5001/Litium/UI/settings/websites/website?bc=website:website
@@ -138,7 +138,7 @@ Password: nimda
 - Select the file that has been created at `~/Desktop/LitiumTutorial/headless/litium-definitions/texts/xls/texts.xlsx`
 - Click `OK`
 
-![GIF](readme_litium_import_translation.gif)
+![GIF](media/readme_litium_import_translation.gif)
 
 
 ### 🎉 Complete
@@ -147,10 +147,10 @@ There are two urls you can visit. The Headless React and MVC Accelerator page.
 |     Headless React     |    MVC - Accelerator   |
 | ---------------------- | ---------------------- |
 | https://localhost:3001 | https://localhost:5001 |
-| <img src="readme_litium_headless.png" alt="" style="max-width: 350px;">   | <img src="readme_litium_mvc.png" alt="" style="max-width: 350px;">  |
+| <img src="media/readme_litium_headless.png" alt="" style="max-width: 350px;">   | <img src="media/readme_litium_mvc.png" alt="" style="max-width: 350px;">  |
 
 ## Relaunch the application
-Execute in the terminal:
+Execute in the terminal.
 ```sh
 $HOME/Desktop/LitiumTutorial/docker/docker-compose up -d &
 cd $HOME/Desktop/LitiumTutorial/backend/Src/Litium.Accelerator.Mvc &&
@@ -168,3 +168,13 @@ yarn dev
 - https://docs.litium.com/accelerators/react-accelerator/get-started
 - https://docs.litium.com/accelerators/react-accelerator/storefront-cli
 - https://localhost:5001/storefront.graphql
+
+# We are Columbus
+Columbus is a global digital advisory and IT services company with more than 1,600 digital advisors serving our customers worldwide. We bring digital transformation into your business, help maximize your value chain and position you to thrive far into the future.
+
+Columbus’ offers end-to-end digital solutions within Strategy & Change, Cloud ERP, Digital Commerce, Data & Analytics, Customer Experience and Application Management that address the lifecycle and sustainability demands of the Manufacturing, Retail & Distribution, Food & Process industries.
+
+We offer a comprehensive solution portfolio with deep industry knowledge, extensive technology expertise and profound customer insight. We have proven this through 30 years of experience serving more than 2,500 customers worldwide.<br>
+<a href="https://columbusglobal.com">www.columbusglobal.com</a><br>
+
+<a href="https://www.columbusglobal.com"><img src="media/columbus.png" alt="" style="max-width: 250px;"></a>
