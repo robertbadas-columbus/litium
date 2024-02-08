@@ -84,7 +84,7 @@ check_node_version() {
 }
 
 # Check dependencies
-dependencies=("dotnet" yarn "nvm")
+dependencies=("dotnet" "docker-compose" "nvm")
 for cmd in "${dependencies[@]}"; do
     if ! command -v "$cmd" >/dev/null 2>&1; then
         err "Error: $cmd is not installed"
@@ -191,7 +191,7 @@ NODE_TLS_REJECT_UNAUTHORIZED="0"
 ' >"$headless_dir/.env.local"
 
 # Yarn install on all folders
-nvm use $node_version && 
+nvm use $node_version && npm install -g yarn 
 cd $backend_dir/Src/Litium.Accelerator.Mvc && yarn install
 cd $backend_dir/Src/Litium.Accelerator.Email && yarn install
 cd $headless_dir && yarn install
