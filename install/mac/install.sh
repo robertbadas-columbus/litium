@@ -18,7 +18,7 @@ node_version="18.17.0"
 # Cleanup when close signal
 cleanup() {
     # Our cleanup code goes here
-    return
+    exit 1
 }
 trap 'trap " " SIGTERM; kill 0; wait; cleanup' SIGINT SIGTERM
 sleep 30 &
@@ -83,6 +83,13 @@ check_node_version() {
     fi
 }
 
+# Check if project folder exists
+if [ -d "$desktop_path/$project_name" ]; then
+    err "Error: Folder already exists. Aborting."
+    err "$desktop_path/$project_name"
+    exit 1
+fi
+
 # Check dependencies
 dependencies=("dotnet" "docker-compose" "nvm")
 for cmd in "${dependencies[@]}"; do
@@ -93,36 +100,33 @@ for cmd in "${dependencies[@]}"; do
 done
 check_node_version $node_version
 
-#Open Docker, only if is not running
-if (! docker stats --no-stream 2>/dev/null); then
-  # On Mac OS this would be the terminal command to launch Docker
+  
+# Open Docker, only if is not running
+if ! curl -s --unix-socket /var/run/docker.sock http/_ping 2>&1 >/dev/null; then
+  warn "Starting Docker, please wait..."
   open /Applications/Docker.app
-  warn "Waiting for Docker to launch"
   sleep 1
-  # Wait until Docker daemon is running and has completed initialisation
-  while (! docker stats --no-stream >/dev/null 2>&1); do
-    # Docker takes a few seconds to initialize
-    sleep 1
-  done
 fi
 
-# Check if project folder exists
-if [ -d "$desktop_path/$project_name" ]; then
-    err "Error: Folder already exists. Aborting."
-    err "$desktop_path/$project_name"
-    exit 1
-fi
+while true; do
+  if curl -s --unix-socket /var/run/docker.sock http/_ping 2>&1 >/dev/null; then
+    break
+  fi
+  sleep 1
+done
+
 
 # Start creating the project
 # Create folder structers
 mkdir -p "$docker_dir" "$backend_dir" "$headless_dir"
 
+# Download docker-compose.yml
+curl -L https://raw.githubusercontent.com/robertbadas-columbus/litium/main/install/mac/docker-compose.yml -o $docker_dir/docker-compose.yml
+
 # Create litium project including storefront-api
 cd $backend_dir && dotnet new litmvcacc --storefront-api
 cd $headless_dir && dotnet new litreactacc &&
 
-# Download docker-compose.yml
-curl -L https://raw.githubusercontent.com/robertbadas-columbus/litium/main/install/mac/docker-compose.yml -o $docker_dir/docker-compose.yml
 
 # Create folder Propterties and create launchSettings.json in that folder
 mkdir -p "$backend_dir/Src/Litium.Accelerator.Mvc/Properties"
