@@ -18,6 +18,9 @@ node_version="18.17.0"
 # Cleanup when close signal
 cleanup() {
     # Our cleanup code goes here
+    for job in $(jobs -p); do
+        kill -s SIGTERM $job >/dev/null 2>&1 || (sleep 10 && kill -9 $job >/dev/null 2>&1 &)
+    done
     exit 1
 }
 trap 'trap " " SIGTERM; kill 0; wait; cleanup' SIGINT SIGTERM
