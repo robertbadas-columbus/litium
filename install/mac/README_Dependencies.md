@@ -111,6 +111,9 @@ echo -e "\033[1;33mPassword used for certificate: $_pass\033[0m"
 ## Useful Links
 - https://docs.litium.com/accelerators/react-accelerator/get-started
 - https://docs.litium.com/accelerators/react-accelerator/storefront-cli
+- https://docs.litium.com/platform/guides/how-to-create-pages-in-react-accelerator
+- https://docs.litium.com/platform/guides/how-to-create-custom-blocks-in-mvc-accelerator
+- https://docs.litium.com/platform/guides/how-to-create-blocks-in-react-accelerator
 - https://localhost:5001/storefront.graphql
 
 # We are Columbus
