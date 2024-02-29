@@ -44,7 +44,7 @@ If you haven't installed nvm, execute the following code in the terminal.
 brew install nvm &&
 mkdir ~/.nvm &&
 echo -e '\nexport NVM_DIR="$HOME/.nvm"\n[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm\n[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion' >> ~/.zprofile && source ~/.zprofile
-nvm install 18.17.0 && npm i -g yarn &&
+nvm install 18.17.0 && npm i -g yarn
 ```
 
 ### Docker
