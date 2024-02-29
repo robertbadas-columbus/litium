@@ -64,6 +64,7 @@ If you haven't installed .NET SDK versions 7 and 8, follow the links below.<br>I
 <pre>
 <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">https://dotnet.microsoft.com/en-us/download/dotnet/8.0</a>
 <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">https://dotnet.microsoft.com/en-us/download/dotnet/7.0</a>
+<a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0">https://dotnet.microsoft.com/en-us/download/dotnet/6.0</a>
 </pre>
 
 ### Restart Terminal
