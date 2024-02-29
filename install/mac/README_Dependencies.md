@@ -13,7 +13,7 @@ This repository provides step-by-step instructions for installing Litium 8 on a 
 
   - Litium Docs account https://docs.litium.com/system_pages/createlitiumaccount
   - Brew
-  - .NET SDK version 8 and 7
+  - .NET SDK version 6, 7 and 8
   - Docker
   - nvm *(Used to install and use multiple node versions. Litium needs node 18.17.0)*
   - yarn
@@ -60,7 +60,7 @@ Once Docker is installed, initiate the application, then head to the cogwheel ic
 
 
 ### .NET
-If you haven't installed .NET SDK versions 7 and 8, follow the links below.<br>It's crucial to select the download from the "Build apps - SDK" section and the options macOS Arm64.
+If you haven't installed .NET SDK versions 6, 7 and 8, follow the links below.<br>It's crucial to select the download from the "Build apps - SDK" section and the options macOS Arm64.
 <pre>
 <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">https://dotnet.microsoft.com/en-us/download/dotnet/8.0</a>
 <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">https://dotnet.microsoft.com/en-us/download/dotnet/7.0</a>
