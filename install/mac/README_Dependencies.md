@@ -50,7 +50,7 @@ nvm install 18.17.0 && npm i -g yarn &&
 ### Docker
 If you haven't installed Docker, follow the link below.
 <pre>
-<a href="https://www.docker.com">https://www.docker.com</a>
+<a href="https://docs.docker.com/desktop/install/mac-install">https://docs.docker.com/desktop/install/mac-install</a>
 </pre>
 
 ### .NET

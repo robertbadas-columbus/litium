@@ -210,6 +210,8 @@ NODE_TLS_REJECT_UNAUTHORIZED="0"
 ' >"$headless_dir/.env.local"
 
 # Yarn install on all folders
+nvm install 16.14.1 && nvm use 16.14.1 && npm install -g yarn
+cd $backend_dir/Src && yarn install && yarn build
 nvm use $node_version && npm install -g yarn 
 cd $backend_dir/Src/Litium.Accelerator.Mvc && yarn install
 cd $backend_dir/Src/Litium.Accelerator.Email && yarn install
