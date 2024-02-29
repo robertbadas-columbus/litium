@@ -47,15 +47,15 @@ There are two urls you can visit. The Headless React and MVC Accelerator page.
 | <a target="_blank" href="https://localhost:3001">https://localhost:3001</a> | <a target="_blank" href="https://localhost:5001">https://localhost:5001</a> |
 | <img src="media/readme_litium_headless.png" alt="" width="450">   | <img src="media/readme_litium_mvc.png" alt="" width="450">  |
 
-## Relaunch the application
-Execute the following in the terminal.
+## Relaunch the application. 2 step process
+1. Execute the following in the terminal.
 ```sh
 cd $HOME/Desktop/LitiumTutorial/docker && docker-compose up -d &
 cd $HOME/Desktop/LitiumTutorial/backend/Src/Litium.Accelerator.Mvc &&
 dotnet run
 ```
 
-Excute the following in a new terminal window.
+2. Excute the following in a new terminal window.
 ```sh
 ~/.dotnet/tools/litium-storefront proxy --litium https://localhost:5001 --storefront http://localhost:3000 &
 cd $HOME/Desktop/LitiumTutorial/headless &&
