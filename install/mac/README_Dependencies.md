@@ -53,6 +53,12 @@ If you haven't installed Docker, follow the link below.
 <a href="https://docs.docker.com/desktop/install/mac-install">https://docs.docker.com/desktop/install/mac-install</a>
 </pre>
 
+### Start docker
+Once Docker is installed, initiate the application, then head to the cogwheel icon and, within the General tab, enable: ***Use Rosetta for x86/amd64 emulation on Apple Silicon***
+
+![PNG](media/docker_use_rosetta.png)
+
+
 ### .NET
 If you haven't installed .NET SDK versions 7 and 8, follow the links below.<br>It's crucial to select the download from the "Build apps - SDK" section and the options macOS Arm64.
 <pre>
