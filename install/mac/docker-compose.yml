@@ -1,30 +1,24 @@
-# Docker compose below sets up the containers needed to run Litium locally
-# Same as https://docs.litium.com/documentation/get-started/shared-dependencies
-# With additional containers for SQL Server and Mailhog
-
 version: '3'
 services:
   dnsresolver:
-    # https://github.com/cytopia/docker-bind
     image: cytopia/bind:stable-0.28
     container_name: dnsresolver
     ports:
-    - "53:53/tcp"
-    - "53:53/udp"
+    - "127.0.0.1:53:53/tcp"
+    - "127.0.0.1:53:53/udp"
     environment: 
     - DNS_CNAME=*.localtest.me=host.docker.internal
-    - DNS_FORWARDER=192.168.65.5
-    dns: 192.168.65.5
+    - DNS_FORWARDER=192.168.65.7
+    dns: 192.168.65.7
     restart: unless-stopped
-     ## After update of docker desktop changing from 192.168.65.5 to 192.168.65.7 may be needed.
-
+ 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.4
     container_name: elasticsearch
     depends_on:
     - dnsresolver
     dns: 
-    - 192.168.65.2
+    - 192.168.65.254
     restart: unless-stopped
     ports:
     - "9200:9200"
@@ -41,18 +35,18 @@ services:
     # The accelerator implementation of Elasticsearch require the analysis-dynamic-synonym.
     # The plugin refreshes the list of synonyms in Elasticsearch every minute allowing synonyms 
     # to be added/modified in Litium backoffice and updated in Elasticsearch without downtime.
-    - "./bin/elasticsearch-plugin list | grep -q analysis-dynamic-synonym || ./bin/elasticsearch-plugin install -b https://github.com/Tasteful/elasticsearch-analysis-dynamic-synonym/releases/download/v7.6.2/elasticsearch-analysis-dynamic-synonym.zip; /usr/local/bin/docker-entrypoint.sh"
-  
+    - "chown -R 1000:1000 /usr/share/elasticsearch/data && (./bin/elasticsearch-plugin list | grep -q analysis-dynamic-synonym || ./bin/elasticsearch-plugin install -b https://github.com/Tasteful/elasticsearch-analysis-dynamic-synonym/releases/download/v7.13.4/elasticsearch-analysis-dynamic-synonym.zip) && /usr/local/bin/docker-entrypoint.sh"
+ 
   kibana:
     # The Kibana image tries, by default, to connect to a host/container called elasticsearch.
-    image: docker.elastic.co/kibana/kibana:7.6.2
+    image: docker.elastic.co/kibana/kibana:7.13.4
     container_name: kibana
     depends_on:
     - elasticsearch
     restart: unless-stopped
     ports:
     - "5601:5601"
-
+ 
   synonymserver:
     # Synonym server to provide elasticsearch with synonyms without needing that the customer application is running.
     image: registry.litium.cloud/apps/synonym-server:1.2.0
@@ -64,14 +58,21 @@ services:
     - DataFolder=/app_data
     volumes:
     - ./volumes/synonymserver/data:/app_data
-
+ 
   redis:
     image: redis:5.0.5-alpine
     container_name: redis
     restart: unless-stopped
     ports:
     - "6379:6379"
-
+  mailhog:
+    image: mailhog/mailhog:latest
+    restart: unless-stopped
+    logging:
+      driver: 'none'
+    ports:
+      - 1025:1025 # SMTP-server
+      - 8025:8025 # Web UI
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
@@ -96,12 +97,3 @@ services:
       - /bin/sh
       - -c
       - "/opt/mssql/bin/permissions_check.sh && /opt/mssql/bin/sqlservr"
-
-  mailhog:
-    image: mailhog/mailhog:latest
-    restart: unless-stopped
-    logging:
-      driver: 'none'
-    ports:
-      - 1025:1025 # SMTP-server
-      - 8025:8025 # Web UI
