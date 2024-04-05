@@ -88,12 +88,7 @@ docker login registry.litium.cloud -u YOUR_USERNAME
 ```
 
 ### Litium Storefront and Litium template
-Execute in the terminal to install Litium Storefront and Litium template
-```sh
-dotnet tool update -g Litium.Storefront.Cli --version "1.0.0-rc-03" --no-cache && dotnet new install "Litium.Accelerator.React.Templates::1.0.0-rc-02" && dotnet new install "Litium.Accelerator.Templates::8.13.1"
-```
-
-*For most recent Litium versions, execute this code instead. Please note, there's a possibility it could disrupt the installation process.*
+Execute in the terminal to install latest Litium Storefront and Litium template.
 ```sh
 dotnet tool update -g Litium.Storefront.Cli --version "1.0.0-rc-*" --no-cache && dotnet new install "Litium.Accelerator.React.Templates::1.0.0-rc-*" && dotnet new install "Litium.Accelerator.Templates"
 ```
