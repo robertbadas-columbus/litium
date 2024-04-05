@@ -2,13 +2,6 @@
 
 This repository provides step-by-step instructions for installing Litium 8 on a Mac with ARM architecture, utilizing the Sonoma OS. Follow the guidelines in this documentation for a seamless installation process.
 
-<pre>
-<b>Litium versions used for this tutorial</b>
-- Litium.Storefront.Cli 1.0.0-rc-03
-- Litium.Accelerator.React.Templates 1.0.0-rc-02
-- Litium.Accelerator.Templates 8.13.1
-</pre>
-
 ### Dependencies list
 
   - Litium Docs account https://docs.litium.com/system_pages/createlitiumaccount
