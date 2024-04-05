@@ -12,7 +12,7 @@ database_name="LitiumTutorial"
 docker_dir="${desktop_path}/${project_name}/docker"
 backend_dir="${desktop_path}/${project_name}/backend"
 headless_dir="${desktop_path}/${project_name}/headless"
-node_version="18.17.0"
+node_version="20"
 
 
 # Cleanup when close signal
@@ -210,9 +210,8 @@ NODE_TLS_REJECT_UNAUTHORIZED="0"
 ' >"$headless_dir/.env.local"
 
 # Yarn install on all folders
-nvm install 16.14.1 && nvm use 16.14.1 && npm install -g yarn
+nvm install $node_version && nvm use $node_version && npm install -g yarn
 cd $backend_dir/Src && yarn install && yarn build
-nvm use $node_version && npm install -g yarn 
 cd $backend_dir/Src/Litium.Accelerator.Mvc && yarn install
 cd $backend_dir/Src/Litium.Accelerator.Email && yarn install
 cd $headless_dir && yarn install
