@@ -74,7 +74,7 @@ services:
       - 1025:1025 # SMTP-server
       - 8025:8025 # Web UI
   sqlserver:
-    image: mcr.microsoft.com/mssql/server:2019-latest
+    image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
       - SA_PASSWORD=Pass@word
       - ACCEPT_EULA=Y
